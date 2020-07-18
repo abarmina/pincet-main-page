@@ -7,4 +7,10 @@ html(lang="en")
         link(rel="stylesheet", href="style.scss")
         title Document
     body
-    h1 hello
+        .first-screen
+            .container-normal
+                include components/header.pug
+                include components/menu.pug
+            .container-small
+                include components/content.pug
+        script(src="index.js")

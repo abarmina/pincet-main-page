@@ -1,0 +1,112 @@
+.header {
+    position: relative;
+    @include flex--column;
+
+    &__item {
+        @include flex--start;
+    }
+
+    &__image {
+        @include flex--center;
+        position: relative;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        box-shadow: 0 3px 20px rgba(68, 68, 68, 0.11);
+        background-color: $main-bg-color;
+        overflow: hidden;
+
+        &--map {
+            z-index: 5;
+            width: 78px;
+            height: 78px;
+
+            &::after {
+                position: absolute;
+                top: 20px;
+                right: 25px;
+                content: url('/images/icon-geolocation.png');
+            }
+        }
+    }
+
+    &__text {
+        &--span {
+            font-family: 'Museo Sans Cyrl 700', sans-serif;
+            line-height: 18px;
+        }
+
+        &--bell {
+            position: relative;
+            padding-left: 15px;
+            font-family: 'Museo Sans Cyrl 500', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.96px;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                content: '';
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #27b24b;
+                box-shadow: 0 0 7px rgba(79, 160, 55, 0.61);
+            }
+        }
+
+        &--number {
+            font-family: 'Museo Sans Cyrl 500', sans-serif;
+            font-size: 24px;
+            letter-spacing: 0.6px;
+        }
+    }
+
+    &__link {
+        position: relative;
+        font-family: 'Museo Sans Cyrl 500', sans-serif;
+        font-size: 12px;
+        color: $link-color;
+        line-height: 0.01px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &::after {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $link-color;
+        }
+    }
+
+    &__button {
+        @include flex--center;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 30px;
+        background-color: $btn-bg-color;
+    }
+
+    &__menu {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        border: 2px solid $main-bg-color;
+        border-radius: 50%;
+        background-color: $main-bg-color;
+        box-shadow: 0 3px 20px rgba(68, 68, 68, 0.11);
+    }
+}
+
+@media #{$medium-and-up} {
+    .header {
+        &__menu {
+            display: none;
+        }
+    }
+}

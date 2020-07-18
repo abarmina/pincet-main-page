@@ -1,0 +1,15 @@
+.logo {
+    @include flex--space-between;
+
+    &__text {
+        display: none;
+    }
+}
+
+@media #{$medium-and-up} {
+    .logo {
+        &__text {
+            display: block;
+        }
+    }
+}
