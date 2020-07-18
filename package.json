@@ -1,0 +1,19 @@
+{
+  "name": "pincet-main-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel src/index.pug",
+    "build": "parcel build src/index.pug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "pug": "^2.0.4",
+    "sass": "^1.26.5"
+  },
+  "description": ""
+}
