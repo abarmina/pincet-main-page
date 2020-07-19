@@ -16,18 +16,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: row;
 }
 
 @mixin flex--start {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-flow: row;
 }
 
 @mixin flex--space-around {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-flow: row;
 }
 
 
@@ -35,4 +38,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-flow: row;
 }

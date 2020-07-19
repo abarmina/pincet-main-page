@@ -1,27 +1,35 @@
-.header
-    .logo
-        include /images/logo.svg
-        .logo__text Студия депиляции и массажный кабинет в Бресте
-    .header__item
-        .header__image.header__image--map.mr-1
-            include /images/map.svg
-        .header__adress
-            .header__text.mb-1 #[span.header__text--span Мы находимся в центре:] #[br] г. Брест, ул. Гоголя, д.65
-            a.header__link(href="#") смотреть на карте
-    .header__info
+.header.container-normal
+    .logo.container-small
+        picture.logo__picture
+            source(srcset=" /images/logo.png", type="" media='only screen and (min-width: 576px)')
+            img(src="/images/logo-small.png")
+            .logo__text Студия депиляции и массажный кабинет в Бресте
+        .logo__nav
+            .logo__menu.mr-2 Меню
+            button.logo__button(id="menu" type="button" name="menu")
+                img(src="/images/icon-menu.png" width="25px" height="25px")
+    .header__content
+        .header__description PINCET - Студия депиляции и массажный кабинет в Бресте
+    .header__content.header__content--secondary
+        .header__item
+            .header__image.header__image--map.mr-1
+                include /images/map.svg
+            .header__adress
+                .header__text #[span.header__text--span Мы находимся в центре:] #[br] г. Брест, ул. Гоголя, д.65
+                a.header__link(href="#") смотреть на карте
+    .header__content.header__content--secondary
         .header__item
             .header__image.mr-2
                 img(src="/images/icon-phone.png")
             .header__contacts
                 .header__text.header__text--bell Звоните, мы сейчас работаем
-                .header__text.header__text--number.mt-1 +375 33 382 24 99
+                .header__text.header__text--number +375 33 382 24 99
         .header__item.mt-1
             .header__image.mr-2
                 img(src="/images/icon-time.png")
             .header__text Пн-Вс #[span.header__text--span 9:00-21:00]
-    button.header__button.button(type="button" name="registration")
-        .header__image.mr-2
-            img(src="/images/icon-calendar.png")
-        | Записаться онлайн
-    button.header__menu(id="menu" type="button" name="menu")
-        img(src="/images/icon-menu.png" width="30px" height="30px")
+    .header__content
+        button.header__button.button(type="button" name="registration")
+            .mr-2
+                img(src="/images/icon-calendar.png")
+            | Записаться онлайн
