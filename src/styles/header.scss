@@ -2,26 +2,59 @@
     @include flex--column;
     flex-wrap: wrap;
 
-    &__content {
+    &__info {
         margin-bottom: 20px;
+
+        @media #{$small-and-up} {
+            margin-left: auto;
+        }
+
+        @media #{$medium-and-up} {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 2.8vw;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__description {
+        max-width: 460px;
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 0.6;
+        line-height: 24px;
+
+        @media #{$small-and-up} {
+            display: none;
+        }
     }
 
     &__item {
         @include flex--start;
     }
 
-    &__image {
+    &__icon {
         @include flex--center;
         position: relative;
-        width: 35px;
-        height: 35px;
         border-radius: 50%;
         box-shadow: 0 3px 20px rgba(68, 68, 68, 0.11);
         background-color: $main-bg-color;
         overflow: hidden;
 
+        &--contact {
+            width: 35px;
+            height: 35px;
+
+            @media #{$medium-and-up} {
+                width: 1.9vw;
+                height: 1.9vw;
+            }
+        }
+
         &--map {
-            z-index: 5;
             width: 78px;
             height: 78px;
 
@@ -30,18 +63,27 @@
                 top: 20px;
                 right: 25px;
                 content: url('/images/icon-geolocation.png');
+
+                @media #{$medium-and-up} {
+                    top: 1.25vw;
+                    right: 1.5vw;
+                }
+            }
+
+            @media #{$medium-and-up} {
+                width: 4.1vw;
+                height: 4.1vw;
             }
         }
-    }
 
-    &__info {
-        @include flex--column;
+        @media #{$medium-and-up} {
+            box-shadow: 0 0.2vw 1.25vw rgba(68, 68, 68, 0.11);
+        }
     }
 
     &__text {
         &--span {
             font-family: 'Museo Sans Cyrl 700', sans-serif;
-            line-height: 18px;
         }
 
         &--bell {
@@ -61,6 +103,19 @@
                 border-radius: 50%;
                 background-color: #27b24b;
                 box-shadow: 0 0 7px rgba(79, 160, 55, 0.61);
+
+                @media #{$medium-and-up}  {
+                    top: 0.3vw;
+                    width: 0.4vw;
+                    height: 0.4vw;
+                    box-shadow: 0 0 0.45vw rgba(79, 160, 55, 0.61);
+                }
+            }
+
+            @media #{$medium-and-up}  {
+                padding-left: 0.8vw;
+                font-size: 0.65vw;
+                letter-spacing: 0.06vw;
             }
         }
 
@@ -69,19 +124,18 @@
             font-size: 24px;
             letter-spacing: 0.6px;
             margin-top: 5px;
-        }
-    }
 
-    &__description {
-        text-align: center;
-        font-size: 22px;
-        letter-spacing: 0.6;
-        line-height: 24px;
+            @media #{$medium-and-up} {
+                font-size: 1.3vw;
+                letter-spacing: 0.04vw;
+                margin-top: 0.3vw;
+            }
+        }
     }
 
     &__link {
         position: relative;
-        margin-top: 10px;
+        margin-top: 17px;
         font-family: 'Museo Sans Cyrl 500', sans-serif;
         font-size: 12px;
         color: $link-color;
@@ -97,6 +151,17 @@
             width: 100%;
             height: 1px;
             background-color: $link-color;
+
+            @media #{$medium-and-up} {
+                bottom: -0.03vw;
+                height: 0.06vw;
+            }
+        }
+
+        @media #{$medium-and-up} {
+            margin-top: 0.9vw;
+            font-size: 0.65vw;
+            letter-spacing: 0.075vw;
         }
     }
 
@@ -105,12 +170,15 @@
     }
 
     &__button {
-        position: relative;
         @include flex--center;
-        padding: 10px 25px;
+        position: fixed;
+        bottom: 15px;
+        right: 10px;
+        @include flex--center;
+        padding: 20px 25px;
         border: none;
         border-radius: 30px;
-        background-color: $btn-bg-color;
+        background-color: $btn-shadow-color;
         font-family: "Museo Sans Cyrl 500";
         font-size: 15px;
         line-height: 24px;
@@ -118,7 +186,7 @@
         color: $btn-color;
 
         &::after {
-            z-index: -1;
+            z-index: -5;
             position: absolute;
             top: 3px;
             left: 0;
@@ -126,77 +194,54 @@
             width: 100%;
             height: 100%;
             border-radius: 30px;
-            background-color: $btn-shadow-color;
-        }
-    }
-}
-
-@media #{$small-and-up} {
-    .header {
-        @include flex--center;
-        flex-wrap: wrap;
-
-        &__description {
-            display: none;
-        }
-
-        &__content {
-            margin-right: auto;
-            margin-left: auto;
-        }
-    }
-}
-
-@media #{$medium-and-up} {
-    .header {
-        &__link {
-            margin-top: 1vw;
-        }
-
-        &__text {
-            &--number {
-                margin-top: 0.5vw;
-            }
-        }
-    }
-}
-
-@media #{$large-and-up} {
-    .header {
-        &__button {
-            position: fixed;
-            bottom: 2vw;
-            right: 2vw;
-            padding: 15px 30px;
-            font-size: 20px;
-            background-color: $btn-shadow-color;
-
-            &::after {
-                background-color: $btn-bg-color;
-            }
-        }
-    }
-}
-
-@media #{$xlarge-and-up} {
-    .header {
-        &__content {
-            margin-right: 1vw;
-        }
-        
-        &__info {
-            @include flex--space-between;
-        }
-
-        &__button {
-            position: relative;
-            bottom: 0;
-            right: 0;
             background-color: $btn-bg-color;
 
-            &::after {
+            @media #{$medium-and-up} {
+                top: 0.02vw;
                 background-color: $btn-shadow-color;
             }
         }
+
+        @media #{$medium-and-up} {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            padding: 1.2vw 2vw;
+            font-size: 0.8vw;
+            background-color: $btn-bg-color;
+        }
+    }
+
+    &__image {
+        &--map {
+            @media #{$medium-and-up} {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &--contact {
+            @media #{$medium-and-up} {
+                width: 0.75vw;
+                height: 0.75vw;
+            }
+        }
+
+        &--button {
+            @media #{$medium-and-up} {
+                width: 1.1vw;
+                height: 1.1vw;
+            }
+        }
+
+    }
+
+    @media #{$small-and-up} {
+        @include flex--start;
+        flex-wrap: wrap;
+    }
+
+    @media #{$medium-and-up} {
+        padding: 0 15px;
     }
 }

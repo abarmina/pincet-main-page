@@ -1,15 +1,23 @@
 .mt-1 {
     margin-top: 10px;
+
+    @media #{$medium-and-up} {
+        margin-top: 0.5vw;
+    }
 }
 
 .mr-1 {
     margin-right: 20px;
+
+    @media #{$medium-and-up} {
+        margin-right: 1vw;
+    }
 }
 
 .mr-2 {
     margin-right: 10px;
-}
 
-.mb-1 {
-    margin-bottom: 15px;
+    @media #{$medium-and-up} {
+        margin-right: 0.5vw;
+    }
 }

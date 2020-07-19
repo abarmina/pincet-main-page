@@ -11,12 +11,10 @@ $initial-start: 320px;
 $small-start: 576px;
 $normal-start: 768px;
 $medium-start: 992px;
-$large-start: 1200px;
-$xlarge-start: 1600px;
+$large-start: 1560px;
 
 $initial-and-up: 'only screen and (min-width: #{$initial-start})';
 $small-and-up: 'only screen and (min-width: #{$small-start})';
 $normal-and-up: 'only screen and (min-width: #{$normal-start})';
 $medium-and-up: 'only screen and (min-width: #{$medium-start})';
 $large-and-up: 'only screen and (min-width: #{$large-start})';
-$xlarge-and-up: 'only screen and (min-width: #{$xlarge-start})';
