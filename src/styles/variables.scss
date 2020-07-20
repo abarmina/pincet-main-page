@@ -1,0 +1,20 @@
+// colors
+$main-bg-color: #ffffff;
+$text-color: #282828;
+$link-color: #ff6078;
+$btn-color: #1f1d1d;
+$btn-bg-color: #fefcfb;
+$btn-shadow-color: #ebeaea;
+
+// @media
+$initial-start: 320px;
+$small-start: 576px;
+$normal-start: 768px;
+$medium-start: 992px;
+$large-start: 1560px;
+
+$initial-and-up: 'only screen and (min-width: #{$initial-start})';
+$small-and-up: 'only screen and (min-width: #{$small-start})';
+$normal-and-up: 'only screen and (min-width: #{$normal-start})';
+$medium-and-up: 'only screen and (min-width: #{$medium-start})';
+$large-and-up: 'only screen and (min-width: #{$large-start})';

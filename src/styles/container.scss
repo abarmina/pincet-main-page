@@ -1,0 +1,21 @@
+.container-small {
+    width: 100%;
+    padding: 20px;
+
+    @media #{$medium-and-up} {
+        width: auto;
+        padding: 0;
+    }
+}
+
+.container-normal {
+    margin: 0 auto;
+
+    @media #{$medium-and-up} {
+        padding: 1.6vw;
+    }
+
+    @media #{$large-and-up} {
+        padding: 1.6vw 9.4vw;
+    }
+}

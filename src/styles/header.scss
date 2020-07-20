@@ -1,0 +1,234 @@
+.header {
+    @include flex--column;
+    flex-wrap: wrap;
+
+    &__info {
+        margin-bottom: 20px;
+
+        @media #{$small-and-up} {
+            margin-left: auto;
+        }
+
+        @media #{$medium-and-up} {
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-right: 2.8vw;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__description {
+        max-width: 460px;
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 0.6;
+        line-height: 24px;
+
+        @media #{$small-and-up} {
+            display: none;
+        }
+    }
+
+    &__item {
+        @include flex--start;
+    }
+
+    &__icon {
+        @include flex--center;
+        position: relative;
+        border-radius: 50%;
+        box-shadow: 0 3px 20px rgba(68, 68, 68, 0.11);
+        background-color: $main-bg-color;
+        overflow: hidden;
+
+        &--contact {
+            width: 35px;
+            height: 35px;
+
+            @media #{$medium-and-up} {
+                width: 1.9vw;
+                height: 1.9vw;
+            }
+        }
+
+        &--map {
+            width: 78px;
+            height: 78px;
+
+            &::after {
+                position: absolute;
+                top: 20px;
+                right: 25px;
+                content: url('/images/icon-geolocation.png');
+
+                @media #{$medium-and-up} {
+                    top: 1.25vw;
+                    right: 1.5vw;
+                }
+            }
+
+            @media #{$medium-and-up} {
+                width: 4.1vw;
+                height: 4.1vw;
+            }
+        }
+
+        @media #{$medium-and-up} {
+            box-shadow: 0 0.2vw 1.25vw rgba(68, 68, 68, 0.11);
+        }
+    }
+
+    &__text {
+        &--span {
+            font-family: 'Museo Sans Cyrl 700', sans-serif;
+        }
+
+        &--bell {
+            position: relative;
+            padding-left: 15px;
+            font-family: 'Museo Sans Cyrl 500', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.96px;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 5px;
+                content: '';
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #27b24b;
+                box-shadow: 0 0 7px rgba(79, 160, 55, 0.61);
+
+                @media #{$medium-and-up}  {
+                    top: 0.3vw;
+                    width: 0.4vw;
+                    height: 0.4vw;
+                    box-shadow: 0 0 0.45vw rgba(79, 160, 55, 0.61);
+                }
+            }
+
+            @media #{$medium-and-up}  {
+                padding-left: 0.8vw;
+                font-size: 0.65vw;
+                letter-spacing: 0.06vw;
+            }
+        }
+
+        &--number {
+            font-family: 'Museo Sans Cyrl 500', sans-serif;
+            font-size: 24px;
+            letter-spacing: 0.6px;
+            margin-top: 5px;
+
+            @media #{$medium-and-up} {
+                font-size: 1.3vw;
+                letter-spacing: 0.04vw;
+                margin-top: 0.3vw;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        margin-top: 17px;
+        font-family: 'Museo Sans Cyrl 500', sans-serif;
+        font-size: 12px;
+        color: $link-color;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-bottom: 1px solid $link-color;
+
+        @media #{$medium-and-up} {
+            margin-top: 0.9vw;
+            font-size: 0.65vw;
+            letter-spacing: 0.075vw;
+            border-bottom: 0.06vw solid $link-color;
+        }
+    }
+
+    &__adress {
+        @include flex--column-start;
+    }
+
+    &__button {
+        @include flex--center;
+        position: fixed;
+        bottom: 15px;
+        right: 10px;
+        @include flex--center;
+        padding: 20px 25px;
+        border: none;
+        border-radius: 30px;
+        background-color: $btn-shadow-color;
+        font-family: "Museo Sans Cyrl 500";
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.75px;
+        color: $btn-color;
+
+        &::after {
+            z-index: -5;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            background-color: $btn-bg-color;
+
+            @media #{$medium-and-up} {
+                top: 0.02vw;
+                background-color: $btn-shadow-color;
+            }
+        }
+
+        @media #{$medium-and-up} {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            padding: 1.2vw 2vw;
+            font-size: 0.8vw;
+            background-color: $btn-bg-color;
+        }
+    }
+
+    &__image {
+        &--map {
+            @media #{$medium-and-up} {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &--contact {
+            @media #{$medium-and-up} {
+                width: 0.75vw;
+                height: 0.75vw;
+            }
+        }
+
+        &--button {
+            @media #{$medium-and-up} {
+                width: 1.1vw;
+                height: 1.1vw;
+            }
+        }
+
+    }
+
+    @media #{$small-and-up} {
+        @include flex--start;
+        flex-wrap: wrap;
+    }
+
+    @media #{$medium-and-up} {
+        padding: 0 15px;
+    }
+}
